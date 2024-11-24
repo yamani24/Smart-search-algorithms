@@ -50,6 +50,11 @@ class Algorithm(Board):
                 current_state = parent_map.get(current_state)  
             path.reverse() 
             print(path)
+            # def print_Board(self,game_board):
+            for row in game_board:
+              for element in row:
+                print(element, end=" ")
+            print()
             return path
         if x + 1 < len(game_board) and game_board[x + 1][y] == 1 and (x + 1, y) not in visited:
             stack.append((x + 1, y))  
@@ -66,4 +71,30 @@ class Algorithm(Board):
 
      print("No path found")
      return []
-
+ 
+    ####################################################
+    
+    def ucs(self,game_board,begin_i,begin_j):
+      visited = set() 
+      parent = {} 
+      q = queue.PriorityQueue()
+      q.put((begin_i, begin_j))   
+      parent[(begin_i, begin_j)] = None  
+      cost=0
+    #   print(cost)  
+      while not q.empty():
+            carrent_i,carrent_j=q.get()
+            visited.add((begin_i, begin_j))
+            parent[(begin_i, begin_j)] = None
+            if game_board[begin_i][begin_j] is self. check(game_board,carrent_i,carrent_j):
+                goal_i, goal_j=self. check(self,game_board,carrent_i,carrent_j)
+                return self.reconstruct_path(parent, (goal_i, goal_j))
+            Next =[self. Next_step (game_board,carrent_i,carrent_j) ] 
+            for n in range (len(Next)) :
+                if n not in visited: 
+                    q.put(n)
+                    cost+=1 
+                    visited.add(n)
+                    parent[n] = (carrent_i, carrent_j)
+      print(cost)              
+      return None

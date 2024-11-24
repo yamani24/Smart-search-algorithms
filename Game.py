@@ -15,11 +15,11 @@ class main(Board):
     )
     
     user =Algorithm()
-    print("user.dfs")
     # print("enter one key a,s,d,w:")
     # x=input()
     visited=[]
-    user.dfs(game_board,3,2, visited)
+    user.ucs(game_board,3,2)
+    
     # path = user.bfs(user.game_board, 3,2)
     # if path:
     #     print("Path found:", path)
