@@ -15,16 +15,18 @@ class main(Board):
     )
     
     user =Algorithm()
-    # print("enter one key a,s,d,w:")
-    # x=input()
     visited=[]
-    user.ucs(game_board,3,2)
-    
-    # path = user.bfs(user.game_board, 3,2)
-    # if path:
-    #     print("Path found:", path)
-    # else:
-    #     print("No path found")   
+    # path = user.ucs(user.game_board, 3,2)
+    # path = user.dfs_recursion(user.game_board, 3,2,visited)
+    start_x, start_y = 2,3
+    target_value = 22
+    visited = set()  
+    path = []  
+    found = user.dfs_recursion(game_board, start_x, start_y, target_value, visited, path)
+    # user.print_Board(game_board)
+    # if not found:
+    #   print("Target not found in the matrix.")
+ 
         
     
       

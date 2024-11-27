@@ -117,15 +117,7 @@ class Board:
         return i,j
       else: 
         return  False  
-    
-    # def check(self, game_board, i, j):
-    # # إذا كانت game_board هي كائن من نوع Board، يمكنك الوصول إلى المصفوفة 2D داخل الكائن كما يلي:
-    #  board = game_board.board_matrix  # تأكد من أن `board_matrix` هي المصفوفة 2D داخل كائن `Board`
-    
-    # # الآن يمكنك استخدام board بدلاً من game_board:
-    #  if board[i+1][j] == 22 or board[i-1][j] == 22 or board[i][j+1] == 22 or board[i][j-1] == 22:
-    #     return i,j
-    #  return False
+  
 
     #######################################
     
@@ -149,15 +141,12 @@ class Board:
           #   x=input()
           #   use=Board()
           #   use.move(game_board,x ) 
-      # players = Board()
-      return  game_board[i][j] 
+      return  game_board[i][j]
     
     ################################################
     
     def move_d(self,game_board,x):     
       if x=="d": 
-      #  can=self.can_move(game_board,i,j,"d") 
-      #  if can==True: 
         for i in range(8):
          for j in range(8):
           if game_board[i][j]==2 :
@@ -167,7 +156,7 @@ class Board:
             j+=1
             if j >= 8: 
                break 
-          #  self.print_Board(game_board)   
+           self.print_Board(game_board)   
            ch=self.check(game_board,i,j)
            if ch==True:
              print("you win")
@@ -178,8 +167,8 @@ class Board:
             # use.move(game_board,x ) 
       #  else:
       #    print("you canot move it!") 
-      playerd = Board()
-      return  playerd
+      
+      return  game_board[i][j] 
     
     #####################################################
     
@@ -207,8 +196,8 @@ class Board:
           #   use.move(game_board,x ) 
       #  else:
       #    print("you canot move it!") 
-      playerw = Board()
-      return  playerw  
+      # playerw = Board()
+      return  game_board[i][j] 
     
     ################################################
     
@@ -236,8 +225,8 @@ class Board:
           #   use.move(game_board,x )      
       #  else:
       #    print("you canot move it!") 
-      playera = Board()
-      return  playera
+      
+      return  game_board[i][j] 
      
       ##############################################
     def equal(matrix1, matrix2):
