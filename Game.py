@@ -1,4 +1,4 @@
-from numpy import *
+# from numpy import *
 import copy
 from Algorithm import Algorithm
 from Logic import Board

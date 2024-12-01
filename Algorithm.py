@@ -161,3 +161,19 @@ class Algorithm(Board):
       print(cost)              
       return None
  
+   ########################################################
+   
+    def heurestic_manh(x1,y1):
+        return x1+y1
+    def heurestic(self,game_board[i][j]):
+        temp=0
+        for n in range(8):
+            h=18
+            temp=min(temp,self.heurestic_manh(2,5))
+            if h!=18:
+             temp+=h
+        return temp     
+        
+    
+        
+ 
