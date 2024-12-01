@@ -165,7 +165,8 @@ class Algorithm(Board):
    
     def heurestic_manh(x1,y1):
         return x1+y1
-    def heurestic(self,game_board[i][j]):
+    
+    def heurestic(self,game_board):
         temp=0
         for n in range(8):
             h=18
@@ -173,6 +174,32 @@ class Algorithm(Board):
             if h!=18:
              temp+=h
         return temp     
+    
+    #######################################################
+    
+    def a_stare(self,game_board,begin_i,begin_j):
+        visited = set() 
+        parent = {} 
+        q = queue.PriorityQueue()
+        q.put((begin_i, begin_j))   
+        parent[(begin_i, begin_j)] = None  
+        while not q.empty():
+            carrent_i,carrent_j=q.get()
+            visited.add((begin_i, begin_j))
+            parent[(begin_i, begin_j)] = None
+            if game_board[begin_i][begin_j] is self. check(game_board,carrent_i,carrent_j):
+                goal_i, goal_j=self. check(self,game_board,carrent_i,carrent_j)
+                return self.reconstruct_path(parent, (goal_i, goal_j))
+            Next =[self. Next_step (game_board,carrent_i,carrent_j) ] 
+            for n in range (len(Next)) :
+                if n not in visited: 
+                    q.put(n)
+                    heurestic=self.heurestic(game_board[carrent_i][carrent_j]) 
+                    visited.add(n)
+                    parent[n] = (carrent_i, carrent_j)
+        print(heurestic)              
+        return None
+        
         
     
         

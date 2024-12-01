@@ -1,6 +1,7 @@
 # from numpy import *
 import copy
-from Algorithm import Algorithm
+#from Algorithm import Algorithm
+from Logic import Algorithm
 from Logic import Board
 class main(Board):
     game_board =([0 , 1 , 0 , 0 , 0 , 0 , 0 , 0 , 0] ,
@@ -22,7 +23,7 @@ class main(Board):
     target_value = 22
     visited = set()  
     path = []  
-    found = user.dfs_recursion(game_board, start_x, start_y, target_value, visited, path)
+    found = user.a_stare(game_board, start_x, start_y, target_value, visited, path)
     # user.print_Board(game_board)
     # if not found:
     #   print("Target not found in the matrix.")
